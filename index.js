@@ -15,12 +15,6 @@ const calculatePoints = (diceRole) => {
     let points = 0;
     const GRANDE_SUITE_CASE_1 = [1, 2, 3, 4, 5];
     const GRANDE_SUITE_CASE_2 = [2, 3, 4, 5, 6];
-
-    // Yams Case
-    if (diceRole[0] === diceRole[1] && diceRole[1] === diceRole[2] && diceRole[2] === diceRole[3] && diceRole[3] === diceRole[4]) {
-        points += 50;
-    }
-    // Grande Suite Case
     const isGrandeSuitePattern = (array, pattern) => {
         for (let i = 0; i < pattern.length; i++) {
             if (!array.includes(pattern[i])) {
@@ -30,8 +24,21 @@ const calculatePoints = (diceRole) => {
         return true;
     };
 
-    if (isGrandeSuitePattern(diceRole, GRANDE_SUITE_CASE_1) || isGrandeSuitePattern(diceRole, GRANDE_SUITE_CASE_2)) {
-        points += 25;
+    // Yams Case
+    if (diceRole[0] === diceRole[1] && diceRole[1] === diceRole[2] && diceRole[2] === diceRole[3] && diceRole[3] === diceRole[4]) {
+        points += 50;
+    }
+    // Grande Suite Case
+    else if (isGrandeSuitePattern(diceRole, GRANDE_SUITE_CASE_1) || isGrandeSuitePattern(diceRole, GRANDE_SUITE_CASE_2)) {
+        points += 40;
+    }
+    // Carré Case
+    else if (() => {
+            const counts = {};
+            for (const d of diceRole) counts[d] = (counts[d] || 0) + 1;
+            return Object.values(counts).some(c => c === 4);
+        }) {
+        points += 35;
     }
 
     return points;
