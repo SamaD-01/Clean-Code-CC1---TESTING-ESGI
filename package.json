@@ -1,0 +1,22 @@
+{
+  "name": "cc1-testing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamaD-01/Clean-Code-CC1---TESTING-ESGI.git"
+  },
+  "author": "SamaD-01",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SamaD-01/Clean-Code-CC1---TESTING-ESGI/issues"
+  },
+  "homepage": "https://github.com/SamaD-01/Clean-Code-CC1---TESTING-ESGI#readme",
+  "description": "",
+  "dependencies": {
+    "vitest": "^4.0.5"
+  }
+}
