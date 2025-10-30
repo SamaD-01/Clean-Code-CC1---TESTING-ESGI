@@ -40,6 +40,14 @@ const calculatePoints = (diceRole) => {
         }) {
         points += 35;
     }
+    // Full Case 
+    else if (() => {
+            const counts = {};
+            for (const d of diceRole) counts[d] = (counts[d] || 0) + 1;
+            return Object.values(counts).some(c => c === 3);
+        }) {
+        points += 30;
+    }
 
     return points;
 }
