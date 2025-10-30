@@ -10,6 +10,8 @@ describe("Yams game", () => {
         [90, [[1, 1, 1, 1, 1], [2, 3, 4, 5, 6]]],
         [80, [[1, 2, 3, 4, 5], [2, 3, 4, 5, 6]]],
         [35, [[3, 3, 3, 3, 6]]],
+        [28, [[2, 2, 2, 4, 5]]],
+        [30, [[2, 2, 2, 5, 5]]],
     ])("Should return %s points, for %s dice roles", (expectedPoints, diceRoles) => {
         expect(lancersYams(diceRoles)).toBe(expectedPoints);
     })
